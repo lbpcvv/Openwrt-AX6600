@@ -4,6 +4,6 @@
 
 
 # 固件简要说明：
-个人自用固件，jdcloud_re-ss-01，jdcloud_re-cs-02； USB能自动挂载。
+个人自用固件，jdcloud_re-cs-02； USB能自动挂载。
 
 
