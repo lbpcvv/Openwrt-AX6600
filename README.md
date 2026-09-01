@@ -1,5 +1,5 @@
 
-用的是上游https://github.com/ones20250/Openwrt-AX6600的固件；
+用的是上游 https://github.com/ones20250/Openwrt-AX6600 的固件；
 
 #软件列表:
 
