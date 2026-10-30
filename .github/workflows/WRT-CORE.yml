@@ -280,7 +280,7 @@ jobs:
 
           # 5. PLUS 核心插件入选断言 (当 WRT_PROFILE 为 PLUS 时)
           if [[ "${WRT_PROFILE_UPPER:-${WRT_PROFILE}}" == "PLUS" ]]; then
-            for PKG in luci-app-passwall2 luci-app-openclash luci-app-dockerman luci-app-adguardhome luci-app-wolultra; do
+            for PKG in luci-app-passwall2 luci-app-openclash  luci-app-wolultra; do
               if ! grep -q "^CONFIG_PACKAGE_${PKG}=y" .config; then
                 echo "::error::断言失败: PLUS 核心插件 ${PKG} 未实际入选！"
                 FAIL=1
@@ -412,62 +412,12 @@ jobs:
             📦 OpenWrt 自动编译固件（AX6600 / IPQ6010）
             ━━━━━━━━━━━━━━━━━━━━━━━
 
-            📌 基本信息
-            <!-- 源码仓库：${{ env.WRT_REPO }} -->
-            <!-- 编译分支：${{ env.WRT_BRANCH }} -->
-            固件版本：${{ env.WRT_PROFILE }}
-            版本说明：${{ env.WRT_PROFILE_DESC }}
-            提交版本：${{ env.WRT_HASH }}
-            编译时间：${{ env.WRT_DATE }}
-            ━━━━━━━━━━━━━━━━━━━━━━━
-
-            📌 外部插件来源
-            ${{ env.WRT_PKG_INFO }}
-            ━━━━━━━━━━━━━━━━━━━━━━━
-
-            🧩 设备与平台
-            设备型号：${{ env.WRT_SOURCE }}
-            硬件平台：${{ env.WRT_TARGET }}
-            CPU架构：Qualcomm IPQ6010 / IPQ60xx
-            ━━━━━━━━━━━━━━━━━━━━━━━
-
-            ⚙️ 固件特性
-            - Qualcomm PPE 开源硬件加速 + Linux 原生 Flowtable 硬件卸载
-            - SONiC FullCone NAT1 游戏穿透支持
-            - 基于 Linux 6.18 LTS 内核 / firewall4 架构
-            - 常用 LuCI 插件预集成
-            - 云端自动编译更新与极速构建优化
-            - 支持自定义配置构建
-            ━━━━━━━━━━━━━━━━━━━━━━━
-
             🔐 默认登录信息
             管理地址：${{ env.WRT_IP }}
             管理密码：${{ env.WRT_PW }}
 
             WiFi 名称：${{ env.WRT_SSID }}
             WiFi 密码：${{ env.WRT_WORD }}
-            ━━━━━━━━━━━━━━━━━━━━━━━
-
-            📶 WiFi 推荐设置（雅典娜三频三 WiFi）
-            - 2.4G（2×2）：信道 11，带宽 20MHz
-            - 5G-1 游戏频段（4×4）：信道 44，带宽 160MHz（无法开启或断流则回退 80MHz）
-            - 5G-2 影音频段（2×2）：信道 149，带宽 80MHz
-            - 通用：地区 US，发射功率 24 dBm，加密 WPA2-PSK（CCMP 算法）
-            ━━━━━━━━━━━━━━━━━━━━━━━
-            📥 下载与刷机说明
-            - 本 Release 为 ${{ env.WRT_PROFILE }} 版固件；两个版本分开发布，请从 README 下载入口按需选择
-            - 首次从原厂固件刷入：选文件名带 factory 的文件
-            - 已是 OpenWrt/ImmortalWrt 升级：选文件名带 sysupgrade 的文件
-            - 刷机 / 救砖完整教程：[刷机救砖教程](${{ github.server_url }}/${{ github.repository }}/blob/main/Docs/刷机救砖教程.md)
-            - Config-*.txt：本次编译的完整 .config 配置，便于复现或二次定制
-            - Packages-*.txt：外部插件（OpenClash / PassWall2 等）的仓库、分支与 commit 记录（纯净版无外部插件，无此文件）
-            - sha256sums.txt：固件校验文件，刷机前请先校验下载完整性（方法见 README 刷机前必读）
-
-            ⚠️ 风险提示
-            刷机存在风险，请确认：
-            - 已备份原厂固件
-            - 能进入 U-Boot 或 TTL 恢复
-            - 了解分区结构
             ━━━━━━━━━━━━━━━━━━━━━━━
 
             💡 插件信息
