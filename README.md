@@ -3,7 +3,7 @@
 
 #软件列表:
 
- luci-app-openclash | luci-app-passwall | luci-app-frpc | luci-app-syncthing | luci-app-zerotier  | luci-app-tailscale  | luci-app-samba4 | luci-app-upnp |  luci-app-acl  | uci-app-wolplus |  
+ luci-app-openclash | luci-app-passwall | luci-app-frpc | luci-app-syncthing | luci-app-zerotier  | luci-app-tailscale  | luci-app-samba4 | luci-app-upnp |  luci-app-acl  | uci-app-wolultra |  
 
 
 # 固件简要说明：
